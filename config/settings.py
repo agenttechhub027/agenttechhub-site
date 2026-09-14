@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
+import shutil
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,9 +35,19 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
+    'tailwind',
+    'theme',
+
     'apps.portfolio',
     'apps.paginas',
 ]
+
+TAILWIND_APP_NAME = 'theme'
+
+# No Windows, `npm` é um shim .cmd; subprocess.run sem shell=True não resolve
+# o executável sem a extensão explícita, então apontamos o caminho completo.
+if os.name == 'nt':
+    NPM_BIN_PATH = shutil.which('npm.cmd') or shutil.which('npm')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
