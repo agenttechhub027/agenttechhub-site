@@ -1,7 +1,4 @@
-from django.contrib import messages
-from django.shortcuts import redirect, render
-
-from apps.contato.forms import LeadForm
+from django.shortcuts import render
 
 
 def home(request):
@@ -17,13 +14,4 @@ def servicos(request):
 
 
 def contato(request):
-    if request.method == 'POST':
-        form = LeadForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Mensagem enviada com sucesso! Em breve entraremos em contato.')
-            return redirect('contato')
-    else:
-        form = LeadForm()
-
-    return render(request, 'paginas/contato.html', {'form': form})
+    return render(request, 'paginas/contato.html')
