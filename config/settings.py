@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h642jjvc8ptr_u^mjm2h9*)ab4&ayeq6s&h6=k&i(xtmmd@n(#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Le de variavel de ambiente: localmente continua True por padrao;
+# em producao, definimos DEBUG=False no ambiente do servidor.
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+# Le de variavel de ambiente: localmente continua so localhost/127.0.0.1;
+# em producao, definimos ALLOWED_HOSTS com o dominio real no ambiente do servidor.
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
 
 # Application definition
@@ -96,6 +100,22 @@ STATICFILES_DIRS = [
     BASE_DIR / 'logo',
     BASE_DIR / 'imagens',
 ]
+
+# Pasta pra onde o collectstatic reune os arquivos estaticos em producao.
+# Separado de STATICFILES_DIRS (que sao as origens); nao usado pelo runserver local.
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+# Seguranca para producao (HTTPS)
+# https://docs.djangoproject.com/en/6.1/topics/security/
+#
+# So ativa quando DEBUG=False, pra nao quebrar o runserver local (que e HTTP).
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    # Comeca baixo (1h) pra testar antes de aumentar pro valor definitivo.
+    SECURE_HSTS_SECONDS = 3600
 
 
 # Email
