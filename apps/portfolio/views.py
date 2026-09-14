@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def projeto_exemplo(request):
+    return render(request, 'portfolio/projeto_exemplo.html')

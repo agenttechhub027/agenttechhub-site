@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{# ------------------------------------------------------------------ #}
+{# Página de EXEMPLO — não é um case real de cliente.                 #}
+{# Serve de modelo pra quando o primeiro case real chegar: copie esta #}
+{# pasta (apps/portfolio/templates/portfolio/projeto_exemplo.html) e  #}
+{# a rota correspondente em apps/portfolio/urls.py e views.py, ajuste #}
+{# o conteúdo abaixo com os dados reais do projeto entregue.          #}
+{# ------------------------------------------------------------------ #}
+
+{% block title %}Projeto Exemplo · AgentTechHub{% endblock %}
+
+{% block content %}
+<section class="px-6 py-16 lg:py-20">
+    <div class="mx-auto max-w-3xl">
+        <a href="{% url 'home' %}" class="text-sm font-medium text-link transition-colors hover:text-accent">&larr; Voltar</a>
+
+        <h1 class="mt-6 font-display text-4xl font-semibold sm:text-5xl">
+            Projeto Exemplo
+        </h1>
+
+        <p class="mt-4 text-base leading-relaxed text-foreground/70 sm:text-lg">
+            Descrição curta do projeto: em uma ou duas frases, o que foi entregue e pra qual tipo de cliente.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+            <span class="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70">Django</span>
+            <span class="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70">Tailwind CSS</span>
+            <span class="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70">Alpine.js</span>
+        </div>
+    </div>
+</section>
+
+<section class="px-6 pb-16 lg:pb-20">
+    <div class="mx-auto max-w-5xl">
+        {# Imagem de capa: troque este placeholder por {% load static %} + <img src="{% static 'portfolio/...' %}"> quando houver a arte real do projeto. #}
+        <div class="flex aspect-video w-full items-center justify-center rounded-2xl border border-foreground/10 bg-foreground/5">
+            <span class="text-sm font-medium text-foreground/40">Imagem de capa do projeto</span>
+        </div>
+    </div>
+</section>
+
+<section class="px-6 pb-16 lg:pb-20">
+    <div class="mx-auto max-w-3xl">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Sobre o projeto</h2>
+        <p class="mt-4 text-base leading-relaxed text-foreground/70 sm:text-lg">
+            Descrição completa: o desafio do cliente, a solução desenvolvida e os resultados alcançados. Este parágrafo é só um espaço reservado — substitua pelo texto real do case quando ele existir.
+        </p>
+
+        {# Link do projeto: mantenha o bloco abaixo só se o projeto tiver uma URL pública; remova-o caso contrário. #}
+        <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_var(--color-accent)] transition-shadow duration-300 hover:shadow-[0_0_28px_-4px_var(--color-accent)]"
+        >
+            Visitar projeto
+        </a>
+    </div>
+</section>
+{% endblock %}
