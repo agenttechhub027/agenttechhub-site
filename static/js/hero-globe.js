@@ -29,7 +29,7 @@ function initHeroGlobe(canvasId) {
   const globeNodes = [];
   const arcs = [];
   const numNodes = 350;
-  const globeRadius = 220;
+  let globeRadius = 220;
 
   const phi = Math.PI * (3 - Math.sqrt(5));
   for (let i = 0; i < numNodes; i++) {
@@ -67,6 +67,13 @@ function initHeroGlobe(canvasId) {
     const parent = canvas.parentElement;
     width = parent.clientWidth;
     height = parent.clientHeight;
+    // Se o container ainda não tem layout real (ex: classes do Tailwind CDN
+    // ainda não aplicadas nesse instante), não desenha com dimensão zerada —
+    // espera o próximo disparo do ResizeObserver com o tamanho real.
+    if (width === 0 || height === 0) return;
+    // Raio proporcional ao container, pra caber inteiro em qualquer tamanho de tela
+    // (em vez de um valor fixo em pixels, que estourava/cortava o globo em telas pequenas).
+    globeRadius = Math.min(width, height) * 0.48;
     const dpr = window.devicePixelRatio || 1;
     canvas.width = width * dpr;
     canvas.height = height * dpr;
@@ -76,8 +83,20 @@ function initHeroGlobe(canvasId) {
     ctx.scale(dpr, dpr);
   }
 
-  window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
+
+  // ResizeObserver reage a QUALQUER mudança real no tamanho do container do
+  // canvas (não só ao evento 'resize' da janela) — inclusive uma correção de
+  // layout que aconteça alguns instantes depois do carregamento inicial (ex:
+  // o Tailwind, carregado via CDN, aplica as classes de forma assíncrona).
+  // Isso garante que o globo se autocorrige pro tamanho certo sem depender de
+  // o usuário redimensionar a janela.
+  if (typeof ResizeObserver !== 'undefined') {
+    const resizeObserver = new ResizeObserver(() => resizeCanvas());
+    resizeObserver.observe(canvas.parentElement);
+  } else {
+    window.addEventListener('resize', resizeCanvas);
+  }
 
   let angleY = 0;
   const angleX = 0.2;

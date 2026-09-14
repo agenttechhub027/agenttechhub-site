@@ -37,6 +37,16 @@
         [x-cloak] {
             display: none !important;
         }
+
+        /* Esconde a barra de rolagem visual dos carrosséis mobile, mantendo o
+           scroll funcional por touch/arrasto (scroll-snap nativo do CSS). */
+        .scrollbar-hide {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
