@@ -6,20 +6,20 @@
 >
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
-        <a href="#" class="flex items-center gap-2 shrink-0">
+        <a href="{% url 'home' %}" class="flex items-center gap-2 shrink-0">
             <img src="{% static 'logosemfundo.png' %}" alt="AgentTechHub" class="h-8 w-auto">
         </a>
 
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/70">
-            <a href="#" class="transition-colors hover:text-foreground">Home</a>
-            <a href="#" class="transition-colors hover:text-foreground">Sobre</a>
-            <a href="#" class="transition-colors hover:text-foreground">Serviços</a>
+            <a href="{% url 'home' %}" class="transition-colors hover:text-foreground">Home</a>
+            <a href="{% url 'sobre' %}" class="transition-colors hover:text-foreground">Sobre</a>
+            <a href="{% url 'servicos' %}" class="transition-colors hover:text-foreground">Serviços</a>
             <!-- Portfólio oculto até ter case real -->
-            <a href="#" class="transition-colors hover:text-foreground">Contato</a>
+            <a href="{% url 'contato' %}" class="transition-colors hover:text-foreground">Contato</a>
         </nav>
 
         <a
-            href="#"
+            href="{% url 'contato' %}"
             class="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_-6px_var(--color-accent)] transition-shadow duration-300 hover:shadow-[0_0_28px_-4px_var(--color-accent)]"
         >
             Fale com a gente
@@ -62,13 +62,13 @@
         class="md:hidden border-t border-foreground/10 bg-background/95 backdrop-blur-md"
     >
         <nav class="flex flex-col gap-1 px-6 py-6 text-sm font-medium text-foreground/70">
-            <a href="#" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Home</a>
-            <a href="#" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Sobre</a>
-            <a href="#" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Serviços</a>
+            <a href="{% url 'home' %}" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Home</a>
+            <a href="{% url 'sobre' %}" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Sobre</a>
+            <a href="{% url 'servicos' %}" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Serviços</a>
             <!-- Portfólio oculto até ter case real -->
-            <a href="#" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Contato</a>
+            <a href="{% url 'contato' %}" class="rounded-lg px-3 py-2.5 transition-colors hover:bg-foreground/5 hover:text-foreground">Contato</a>
             <a
-                href="#"
+                href="{% url 'contato' %}"
                 class="mt-3 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white"
             >
                 Fale com a gente

@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="px-6 py-16 lg:py-20">
+    <div class="mx-auto max-w-2xl text-center">
+        <h1 class="font-display text-4xl font-semibold sm:text-5xl">
+            Fale com a gente
+        </h1>
+
+        <p class="mt-4 text-base leading-relaxed text-foreground/70 sm:text-lg">
+            Conta pra gente sobre o seu projeto e vamos encontrar a melhor solução juntos.
+        </p>
+    </div>
+</section>
+
+<section class="px-6 py-16 lg:py-20">
+    <div class="mx-auto max-w-3xl" x-data="{ openIndex: null }">
+        <h2 class="font-display text-3xl font-semibold sm:text-4xl">Perguntas frequentes</h2>
+
+        <div class="mt-10 divide-y divide-foreground/10 border-t border-b border-foreground/10 lg:mt-12">
+
+            <div>
+                <button
+                    type="button"
+                    @click="openIndex = openIndex === 0 ? null : 0"
+                    class="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    :aria-expanded="openIndex === 0"
+                >
+                    <span class="font-display text-base font-medium text-foreground sm:text-lg">Quanto tempo leva para desenvolver meu projeto?</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="h-5 w-5 shrink-0 text-foreground/50 transition-transform duration-300"
+                        :class="openIndex === 0 && 'rotate-180'"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <div
+                    x-show="openIndex === 0"
+                    x-cloak
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-1"
+                >
+                    <p class="pb-5 text-sm leading-relaxed text-foreground/60 sm:text-base">O prazo varia conforme a complexidade: sites institucionais e landing pages costumam ser mais rápidos, enquanto sistemas sob demanda e SaaS exigem um planejamento mais detalhado. Definimos o prazo exato após entender sua necessidade.</p>
+                </div>
+            </div>
+
+            <div>
+                <button
+                    type="button"
+                    @click="openIndex = openIndex === 1 ? null : 1"
+                    class="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    :aria-expanded="openIndex === 1"
+                >
+                    <span class="font-display text-base font-medium text-foreground sm:text-lg">Eu sou o dono do sistema depois de pronto?</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="h-5 w-5 shrink-0 text-foreground/50 transition-transform duration-300"
+                        :class="openIndex === 1 && 'rotate-180'"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <div
+                    x-show="openIndex === 1"
+                    x-cloak
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-1"
+                >
+                    <p class="pb-5 text-sm leading-relaxed text-foreground/60 sm:text-base">Sim. Em sistemas sob demanda e SaaS desenvolvidos para você, a propriedade é sua: código, dados e infraestrutura ficam em seu nome.</p>
+                </div>
+            </div>
+
+            <div>
+                <button
+                    type="button"
+                    @click="openIndex = openIndex === 2 ? null : 2"
+                    class="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    :aria-expanded="openIndex === 2"
+                >
+                    <span class="font-display text-base font-medium text-foreground sm:text-lg">Vocês oferecem suporte após a entrega?</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="h-5 w-5 shrink-0 text-foreground/50 transition-transform duration-300"
+                        :class="openIndex === 2 && 'rotate-180'"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <div
+                    x-show="openIndex === 2"
+                    x-cloak
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-1"
+                >
+                    <p class="pb-5 text-sm leading-relaxed text-foreground/60 sm:text-base">Sim, oferecemos suporte após a entrega para garantir que tudo funcione como esperado.</p>
+                </div>
+            </div>
+
+            <div>
+                <button
+                    type="button"
+                    @click="openIndex = openIndex === 3 ? null : 3"
+                    class="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    :aria-expanded="openIndex === 3"
+                >
+                    <span class="font-display text-base font-medium text-foreground sm:text-lg">Como funciona o orçamento?</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="h-5 w-5 shrink-0 text-foreground/50 transition-transform duration-300"
+                        :class="openIndex === 3 && 'rotate-180'"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <div
+                    x-show="openIndex === 3"
+                    x-cloak
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-1"
+                >
+                    <p class="pb-5 text-sm leading-relaxed text-foreground/60 sm:text-base">Cada projeto é único, então o valor é definido após conversarmos sobre suas necessidades. Entre em contato e vamos entender o que você precisa.</p>
+                </div>
+            </div>
+
+            <div>
+                <button
+                    type="button"
+                    @click="openIndex = openIndex === 4 ? null : 4"
+                    class="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    :aria-expanded="openIndex === 4"
+                >
+                    <span class="font-display text-base font-medium text-foreground sm:text-lg">Vocês atendem clientes de qualquer lugar?</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="h-5 w-5 shrink-0 text-foreground/50 transition-transform duration-300"
+                        :class="openIndex === 4 && 'rotate-180'"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <div
+                    x-show="openIndex === 4"
+                    x-cloak
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-1"
+                >
+                    <p class="pb-5 text-sm leading-relaxed text-foreground/60 sm:text-base">Sim, trabalhamos de forma remota e atendemos clientes de qualquer região.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="px-6 py-16 lg:py-20">
+    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+
+        <form method="post" class="flex flex-col gap-5 lg:col-span-3">
+            {% csrf_token %}
+
+            <div>
+                <label for="{{ form.nome.id_for_label }}" class="mb-2 block text-sm font-medium text-foreground/80">Nome <span class="text-danger">*</span></label>
+                {{ form.nome }}
+                {% for error in form.nome.errors %}
+                    <p class="mt-1.5 text-sm text-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="{{ form.email.id_for_label }}" class="mb-2 block text-sm font-medium text-foreground/80">E-mail <span class="text-danger">*</span></label>
+                {{ form.email }}
+                {% for error in form.email.errors %}
+                    <p class="mt-1.5 text-sm text-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="{{ form.telefone.id_for_label }}" class="mb-2 block text-sm font-medium text-foreground/80">Telefone <span class="text-danger">*</span></label>
+                {{ form.telefone }}
+                {% for error in form.telefone.errors %}
+                    <p class="mt-1.5 text-sm text-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div>
+                <label for="{{ form.mensagem.id_for_label }}" class="mb-2 block text-sm font-medium text-foreground/80">Mensagem <span class="text-danger">*</span></label>
+                {{ form.mensagem }}
+                {% for error in form.mensagem.errors %}
+                    <p class="mt-1.5 text-sm text-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <button
+                type="submit"
+                class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_-6px_var(--color-accent)] transition-shadow duration-300 hover:shadow-[0_0_28px_-4px_var(--color-accent)]"
+            >
+                Enviar mensagem
+            </button>
+        </form>
+
+        <div class="flex flex-col gap-4 lg:col-span-2">
+            <a
+                href="mailto:agenttechhub027@gmail.com"
+                class="flex items-center gap-4 rounded-xl border border-foreground/10 p-4 transition-colors duration-300 hover:border-foreground/25"
+            >
+                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary-alt">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    </svg>
+                </span>
+                <span>
+                    <span class="block text-xs text-foreground/50">E-mail</span>
+                    <span class="block text-sm font-medium text-foreground">agenttechhub027@gmail.com</span>
+                </span>
+            </a>
+
+            <a
+                href="https://wa.me/5527996410728?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AgentTech%20Hub%20e%20quero%20fazer%20"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 rounded-xl border border-foreground/10 p-4 transition-colors duration-300 hover:border-foreground/25"
+            >
+                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-5 w-5">
+                        <path d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9c0 1.6.42 3.1 1.15 4.4L3 21l4.7-1.1c1.28.68 2.75 1.1 4.3 1.1Z"/>
+                        <path d="M8.5 8.7c.15-.5.6-.7 1-.7.2 0 .45 0 .6.35.2.45.65 1.55.7 1.65.05.15.1.3-.02.5-.1.2-.17.3-.32.47-.15.17-.3.32-.15.6.15.3.7 1.15 1.5 1.85.9.8 1.65 1.05 1.95 1.17.3.13.47.1.65-.1.2-.2.75-.85.95-1.15.2-.3.4-.25.65-.15.28.1 1.7.8 2 .95.3.15.5.22.57.35.08.15.08.8-.2 1.55-.28.75-1.5 1.4-2.08 1.47-.53.08-1.2.1-1.95-.12-.45-.13-1.03-.32-1.77-.63-3.1-1.34-5.13-4.47-5.28-4.68-.15-.2-1.25-1.66-1.25-3.17 0-1.5.8-2.24 1.08-2.55Z" fill="currentColor" stroke="none"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="block text-xs text-foreground/50">WhatsApp</span>
+                    <span class="block text-sm font-medium text-foreground">Christian</span>
+                </span>
+            </a>
+
+            <a
+                href="https://wa.me/5527997946290?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AgentTech%20Hub%20e%20quero%20fazer%20"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 rounded-xl border border-foreground/10 p-4 transition-colors duration-300 hover:border-foreground/25"
+            >
+                <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-5 w-5">
+                        <path d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9c0 1.6.42 3.1 1.15 4.4L3 21l4.7-1.1c1.28.68 2.75 1.1 4.3 1.1Z"/>
+                        <path d="M8.5 8.7c.15-.5.6-.7 1-.7.2 0 .45 0 .6.35.2.45.65 1.55.7 1.65.05.15.1.3-.02.5-.1.2-.17.3-.32.47-.15.17-.3.32-.15.6.15.3.7 1.15 1.5 1.85.9.8 1.65 1.05 1.95 1.17.3.13.47.1.65-.1.2-.2.75-.85.95-1.15.2-.3.4-.25.65-.15.28.1 1.7.8 2 .95.3.15.5.22.57.35.08.15.08.8-.2 1.55-.28.75-1.5 1.4-2.08 1.47-.53.08-1.2.1-1.95-.12-.45-.13-1.03-.32-1.77-.63-3.1-1.34-5.13-4.47-5.28-4.68-.15-.2-1.25-1.66-1.25-3.17 0-1.5.8-2.24 1.08-2.55Z" fill="currentColor" stroke="none"/>
+                    </svg>
+                </span>
+                <span>
+                    <span class="block text-xs text-foreground/50">WhatsApp</span>
+                    <span class="block text-sm font-medium text-foreground">Gabriel</span>
+                </span>
+            </a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
