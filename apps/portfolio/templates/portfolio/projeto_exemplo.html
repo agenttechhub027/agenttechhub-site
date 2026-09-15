@@ -6,6 +6,9 @@
 {# pasta (apps/portfolio/templates/portfolio/projeto_exemplo.html) e  #}
 {# a rota correspondente em apps/portfolio/urls.py e views.py, ajuste #}
 {# o conteúdo abaixo com os dados reais do projeto entregue.          #}
+{# Stack técnica: manter só como comentário Django (referência        #}
+{# interna), sem exibir tags de tecnologia na página — o cliente      #}
+{# final não precisa ver a stack, só o que o sistema resolve.         #}
 {# ------------------------------------------------------------------ #}
 
 {% block title %}Projeto Exemplo · AgentTechHub{% endblock %}
@@ -23,11 +26,7 @@
             Descrição curta do projeto: em uma ou duas frases, o que foi entregue e pra qual tipo de cliente.
         </p>
 
-        <div class="mt-6 flex flex-wrap gap-2">
-            <span class="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70">Django</span>
-            <span class="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70">Tailwind CSS</span>
-            <span class="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70">Alpine.js</span>
-        </div>
+        {# Stack técnica (referência interna, não exibida ao cliente): Django, Tailwind CSS, Alpine.js. #}
     </div>
 </section>
 
