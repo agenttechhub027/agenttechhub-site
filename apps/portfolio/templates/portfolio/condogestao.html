@@ -22,11 +22,19 @@
 
 <section class="px-6 pb-16 lg:pb-20">
     <div class="mx-auto max-w-5xl">
-        <img
-            src="{% static 'portfolio/condogestao-capa.png' %}"
-            alt="Tela de login do CondoGestão, com o card 'Entre no seu contexto' para acesso ao painel do condomínio"
-            class="w-full rounded-2xl border border-foreground/10"
+        <video
+            src="{% static 'portfolio/condogestao-demo.mp4' %}"
+            poster="{% static 'portfolio/condogestao-capa.png' %}"
+            class="w-full max-w-3xl mx-auto rounded-2xl border border-foreground/10"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
         >
+            Seu navegador não suporta vídeo. Aqui está a
+            <a href="{% static 'portfolio/condogestao-demo.mp4' %}">demonstração do CondoGestão</a>.
+        </video>
     </div>
 </section>
 
