@@ -6,7 +6,7 @@ from django.shortcuts import render
 PROJETOS_PUBLICADOS = [
     {
         'nome': 'CondoGestão',
-        'descricao_curta': 'Sistema de gestão de portaria condominial, com controle de encomendas e acesso de veículos e moradores.',
+        'descricao_curta': 'Sistema de portaria condominial 100% digital — encomendas com assinatura digital, controle de veículos e agente de IA integrado, sem papel.',
         'imagem': 'portfolio/condogestao-capa.png',
         'url_detalhe': 'portfolio_condogestao',
     },
