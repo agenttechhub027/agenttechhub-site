@@ -78,4 +78,18 @@
         </a>
     </div>
 </section>
+
+{% if depoimentos %}
+<section class="px-6 pb-16 lg:pb-20">
+    <div class="mx-auto max-w-3xl">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">O que dizem</h2>
+
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {% for depoimento in depoimentos %}
+                {% include 'partials/_card_depoimento.html' with iniciais=depoimento.iniciais cor=depoimento.cor nome=depoimento.nome papel=depoimento.papel nota=depoimento.nota texto=depoimento.texto %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
 {% endblock %}

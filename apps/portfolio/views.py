@@ -12,6 +12,17 @@ PROJETOS_PUBLICADOS = [
     },
 ]
 
+DEPOIMENTOS_CONDOGESTAO = [
+    {
+        'iniciais': 'AF',
+        'cor': '#0099FF',
+        'nome': 'Ana Ferreira',
+        'papel': 'Síndica · Vitória-ES',
+        'nota': 5,
+        'texto': 'O CondoGestão acabou com o caderno de papel do nosso condomínio. Encomenda com assinatura digital, controle de veículos e relatório na hora, tudo num painel simples de usar.',
+    },
+]
+
 
 def lista(request):
     return render(request, 'portfolio/lista.html', {'projetos': PROJETOS_PUBLICADOS})
@@ -22,4 +33,4 @@ def projeto_exemplo(request):
 
 
 def condogestao(request):
-    return render(request, 'portfolio/condogestao.html')
+    return render(request, 'portfolio/condogestao.html', {'depoimentos': DEPOIMENTOS_CONDOGESTAO})

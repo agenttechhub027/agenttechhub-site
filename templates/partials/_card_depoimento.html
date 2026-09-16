@@ -1,0 +1,21 @@
+{# Uso: {% include 'partials/_card_depoimento.html' with iniciais='JS' cor='#3B82F6' nome='João Silva' papel='Síndico, Cond. Vila Nova' nota=5 texto='Depoimento aqui.' %} #}
+<div class="max-w-[380px] rounded-xl border border-[rgba(0,191,255,0.15)] bg-[#0A0F1C] p-5">
+    <div class="flex items-center gap-3">
+        <div
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white"
+            style="background-color: {{ cor }};"
+        >
+            {{ iniciais }}
+        </div>
+        <div>
+            <p class="text-[15px] font-medium text-white">{{ nome }}</p>
+            <p class="text-[13px] text-[#8FA3B8]">{{ papel }}</p>
+        </div>
+    </div>
+
+    <div class="mt-2 text-[#F5BC25]" aria-label="Avaliação: {{ nota }} de 5 estrelas">
+        {% for i in "12345" %}{% if forloop.counter <= nota %}★{% else %}☆{% endif %}{% endfor %}
+    </div>
+
+    <p class="mt-2 text-[14px] leading-relaxed text-[#C7D3E0]">{{ texto }}</p>
+</div>
